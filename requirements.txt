@@ -2,4 +2,4 @@
 # 可选依赖按需安装（见 pyproject.toml [project.optional-dependencies]）
 fastapi>=0.110
 uvicorn>=0.29
-pytest>=8.0
+pytest>=9.1.1
