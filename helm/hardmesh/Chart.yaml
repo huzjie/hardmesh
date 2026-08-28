@@ -1,0 +1,6 @@
+apiVersion: v2
+name: hardmesh
+description: AI 硬件控制网格与实验室自动化平台（MHS 落地）
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

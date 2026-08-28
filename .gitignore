@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# 运行时数据
+/data/
+*.db
+*.db-journal
+*.jsonl
+
+# 测试与覆盖率
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / 前端
+web/node_modules/
+web/dist/
+sdk/typescript/node_modules/
+sdk/typescript/dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# 本地配置（含密钥）
+config.json
+.env

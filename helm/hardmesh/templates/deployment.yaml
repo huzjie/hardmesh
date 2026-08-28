@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "hardmesh.fullname" . }}
+  labels:
+    app: {{ include "hardmesh.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "hardmesh.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "hardmesh.fullname" . }}
+    spec:
+      containers:
+        - name: hardmesh
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 8080
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          livenessProbe:
+            httpGet: { path: /healthz, port: 8080 }
+          readinessProbe:
+            httpGet: { path: /readyz, port: 8080 }

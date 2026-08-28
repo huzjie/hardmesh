@@ -1,0 +1,15 @@
+{
+  "name": "hardmesh-sdk",
+  "version": "0.1.0",
+  "description": "hardmesh control-plane TypeScript SDK",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "license": "Apache-2.0"
+}

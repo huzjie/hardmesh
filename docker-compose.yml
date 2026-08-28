@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  hardmesh:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      HARDMESH_STORAGE__PATH: /app/data/hardmesh.db
+    volumes:
+      - hardmesh-data:/app/data
+    restart: unless-stopped
+
+  console:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - hardmesh
+    restart: unless-stopped
+
+volumes:
+  hardmesh-data:

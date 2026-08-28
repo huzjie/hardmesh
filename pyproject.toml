@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hardmesh"
+version = "0.1.0"
+description = "AI 硬件控制网格与实验室自动化平台（MHS 模型硬件标准落地）"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "huzjie" }]
+keywords = ["mhs", "hardware", "lab-automation", "agent", "llm", "robotics", "calibration"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.optional-dependencies]
+fastapi = ["fastapi", "uvicorn"]
+serial = ["pyserial"]
+gpib = ["pyvisa", "pyvisa-py"]
+mqtt = ["paho-mqtt"]
+dev = ["pytest", "pytest-cov"]
+
+[project.scripts]
+hardmesh = "hardmesh.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["hardmesh*"]

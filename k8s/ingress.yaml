@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hardmesh
+  namespace: hardmesh
+spec:
+  rules:
+    - host: hardmesh.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hardmesh
+                port:
+                  number: 8080

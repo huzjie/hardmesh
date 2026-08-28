@@ -1,0 +1,30 @@
+{
+  "server": { "host": "0.0.0.0", "port": 8080 },
+  "storage": { "path": "hardmesh.db" },
+  "safety": {
+    "default_deny": true,
+    "approval": { "enabled": false, "mode": "nofm", "n": 1, "m": 2 },
+    "limits": {
+      "max_voltage_v": 24.0,
+      "max_current_a": 10.0,
+      "max_temperature_c": 80.0,
+      "max_torque_nm": 5.0,
+      "max_power_mw": 100.0
+    }
+  },
+  "calibration": {
+    "max_iterations": 50,
+    "tolerance": 0.001,
+    "objective": "stability",
+    "optimizer": "random"
+  },
+  "agent": { "provider": "mock", "max_steps": 10, "model": "" },
+  "providers": {
+    "openai": { "api_key": "", "model": "gpt-5.6" },
+    "deepseek": { "api_key": "", "model": "deepseek-chat" },
+    "qwen": { "api_key": "", "model": "qwen-plus" },
+    "glm": { "api_key": "", "model": "glm-5.3-flash" }
+  },
+  "observability": { "prometheus": true, "tracing": true },
+  "logging": { "level": "INFO" }
+}

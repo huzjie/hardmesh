@@ -1,0 +1,29 @@
+replicaCount: 2
+
+image:
+  repository: huzjie/hardmesh
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+config:
+  safety:
+    default_deny: true
+  calibration:
+    max_iterations: 50
+    tolerance: 0.001
+
+ingress:
+  enabled: false
+  host: hardmesh.example.com

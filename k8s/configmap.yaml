@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hardmesh-config
+  namespace: hardmesh
+data:
+  config.json: |
+    {
+      "server": { "host": "0.0.0.0", "port": 8080 },
+      "safety": { "default_deny": true },
+      "calibration": { "max_iterations": 50, "tolerance": 0.001 }
+    }
