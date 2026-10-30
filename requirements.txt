@@ -1,5 +1,5 @@
 # hardmesh 内核零第三方运行时依赖
 # 可选依赖按需安装（见 pyproject.toml [project.optional-dependencies]）
-fastapi>=0.110
+fastapi>=0.162.0
 uvicorn>=0.29
 pytest>=8.0
